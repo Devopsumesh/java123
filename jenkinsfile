@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage ("SCM Chkout-1"){
+            steps {
+                git 'https://github.com/Vishwanathms/Java-Proj1'
+            }
+        }
+        stage ("Java execute"){
+            steps {
+                sh 'javac *.java'
+                sh 'java Simple'
+                sh 'ls -l'
+            }
+        }
+    }
+}
